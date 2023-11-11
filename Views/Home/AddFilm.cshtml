@@ -1,0 +1,82 @@
+﻿@model MyFilmRanking.Models.Film
+
+@{
+    ViewBag.Title = "Add Film";
+    Layout = "_Layout";
+}
+
+<style>
+    .add-film-container {
+        max-width: 500px;
+        margin: auto;
+        padding: 20px;
+        background-color: #444;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        border-radius: 5px;
+    }
+
+    label {
+        display: block;
+        margin-bottom: 5px;
+        color: #fff;
+    }
+
+    input[type="text"] {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        border: none;
+        border-radius: 3px;
+        background-color: #555;
+        color: #fff;
+    }
+
+    textarea {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        border: none;
+        border-radius: 3px;
+        background-color: #555;
+        color: #fff;
+    }
+
+    .btn-add-film {
+        background-color: #3498db;
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 3px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+
+        .btn-add-film:hover {
+            background-color: #258cd1;
+        }
+</style>
+
+<div class="add-film-container">
+    <h2>Add New Film</h2>
+    <form method="post" asp-controller="Home" asp-action="AddFilm">
+        <label for="Title">Title:</label>
+        <input type="text" asp-for="Title" required>
+
+        <label for="Description">Description:</label>
+        <input type="text" asp-for="Description" required>
+
+        <label for="ImageUrl">Image URL:</label>
+        <input type="text" asp-for="ImageUrl" required>
+
+        <label for="Director">Director:</label>
+        <input type="text" asp-for="Director" required>
+
+        <label for="Budget">Budget:</label>
+        <input type="number" asp-for="Budget" required>
+
+        <label for="Genre">Genre:</label>
+        <input type="text" asp-for="Genre" required>
+
+        <button type="submit" class="btn-add-film">Add Film</button>
+    </form>
+</div>

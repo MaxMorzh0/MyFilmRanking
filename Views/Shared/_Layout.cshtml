@@ -1,0 +1,75 @@
+﻿@using MyFilmRanking;
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+    <style>
+        body {
+            background-color: #1a1a1a;
+            color: #ffffff;
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background-color: #333;
+        }
+
+            header img {
+                max-width: 170px;
+                max-height: 220px;
+                margin-right: 20px;
+            }
+
+        nav {
+            display: flex;
+            gap: 20px;
+        }
+
+            nav a {
+                text-decoration: none;
+                color: #ffffff;
+                padding: 8px 15px;
+                border-radius: 5px;
+                transition: background-color 0.3s;
+            }
+
+                nav a:hover {
+                    background-color: #555;
+                }
+
+        main {
+            padding: 20px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background-color: #333;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="~/Home/Main">
+            <img src="/Data/Images/film1.jpg" />
+        </a>
+        <nav>
+            <a href="~/Home/List">List of All</a>
+            <a href="~/Home/AddFilm">Add a new film</a>
+            <a href="~/Account/Login">Login</a>
+            <a href="~/Account/Logout">Logout</a>
+        </nav>
+    </header>
+    @RenderBody()
+</body>
+</html>

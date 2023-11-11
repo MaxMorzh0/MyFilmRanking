@@ -1,0 +1,55 @@
+﻿@model MyFilmRanking.Models.Film
+
+@{
+    ViewBag.Title = "Film Details";
+    Layout = "_Layout";
+}
+
+<style>
+    .film-details {
+        max-width: 600px;
+        margin: 20px auto;
+        padding: 20px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        border-radius: 5px;
+        background-color: #444;
+        color: #fff;
+    }
+
+    .film-image {
+        width: 100%;
+        height: auto;
+        margin-bottom: 10px;
+    }
+    .film-info {
+        flex-grow: 1;
+    }
+
+    h2 {
+        color: #fff; 
+    }
+
+    p {
+        color: #ccc; 
+    }
+
+    ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    li {
+        margin-bottom: 10px;
+        color: #bbb; 
+    }
+</style>
+
+<div class="film-details">
+    <h2>@Model.Title</h2>
+    <img src="@Model.ImageUrl" alt="@Model.Title" class="film-image" />
+    <p>@Model.Description</p>
+    <p><strong>Director:</strong> @Model.Director</p>
+    <p><strong>Budget:</strong> @Model.Budget</p>
+    <p><strong>Genre:</strong> @Model.Genre</p>
+</div>

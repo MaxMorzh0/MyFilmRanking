@@ -1,0 +1,33 @@
+﻿@model MyFilmRanking.Models.Film
+
+@{
+	ViewBag.Title = "MainPage";
+	Layout = "_Layout";
+}
+<style>
+    body {
+        background-color: #1a1a1a;
+        color: #ffffff;
+        margin: 0;
+        font-family: 'Arial', sans-serif;
+    }
+    .image{
+        margin: auto;
+        width: 50%;
+        padding: 10px;
+        height: 500px;
+        width: 500px;
+    }
+    .image img{
+        height: 100%;
+        width: 100%;
+    }
+</style>
+@if (Model != null)
+{
+    <div class="image">
+        <a asp-controller="Home" asp-action="Film" asp-route-id="@Model.Id">
+            <img src="@Model.ImageUrl" alt="@Model.Title" />
+        </a>
+    </div>
+}
